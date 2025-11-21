@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Others</title>
+  <style type="text/css">
+    /* 子页面背景：与主页面棕色单元格颜色一致 */
+    body {
+      background-color: rgba(121, 85, 72, 0.3);
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+      perspective: 1000px; /* 开启3D透视效果 */
+		position: relative; /* 为子元素绝对定位做参考 */
+  overflow: hidden; /* 避免小屏幕下溢出 */
+    }
+
+    /* 图片容器：2行4列布局 */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 每行4张图 */
+      gap: 25px; /* 图片间隔 */
+      width: 100%;
+      max-width: 1200px;
+      position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    }
+
+    /* 图片项：3D容器 */
+    .image-item {
+      width: 100%;
+      aspect-ratio: 4/3; /* 固定宽高比，图片大小一致 */
+      position: relative;
+      transform-style: preserve-3d; /* 保持3D空间 */
+      cursor: pointer; /* 鼠标悬浮显示手型 */
+    }
+
+    /* 图片：对折消失动画 */
+    .image-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* 保持图片比例 */
+      backface-visibility: hidden; /* 隐藏背面 */
+      transition: all 0.6s ease; /* 动画过渡 */
+    }
+
+    /* 鼠标悬停：沿Y轴对折+透明度降为0 */
+    .image-item:hover img {
+      transform: rotateY(180deg); /* Y轴旋转180度（对折） */
+      opacity: 0; /* 逐渐消失 */
+    }
+
+    /* 底部导航链接 */
+    .bottom-nav {
+      text-align: center;
+      padding: 10px 0;
+    }
+    .bottom-nav a {
+      color: orange;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+    }
+
+    /* 最终解释权声明 */
+    .disclaimer {
+      text-align: center;
+      margin-top: 15px;
+      color: #000;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="image-grid">
+    <!-- 图片1 -->
+    <div class="image-item">
+      <img src="Image/1.国际节.png" >
+    </div>
+    <!-- 图片2 -->
+    <div class="image-item">
+      <img src="Image/chongzi.png" >
+    </div>
+    <!-- 图片3 -->
+    <div class="image-item">
+      <img src="Image/happy.png">
+    </div>
+    <!-- 图片4 -->
+    <div class="image-item">
+      <img src="Image/jishiqi.jpg" >
+    </div>
+    <!-- 图片5 -->
+    <div class="image-item">
+      <img src="Image/rongyu.png" >
+    </div>
+    <!-- 图片6 -->
+    <div class="image-item">
+      <img src="Image/shoulian.png" >
+    </div>
+    <!-- 图片7 -->
+    <div class="image-item">
+      <img src="Image/touge.png" >
+    </div>
+    <!-- 图片8 -->
+    <div class="image-item">
+      <img src="Image/wangchai.png" >
+    </div>
+  </div>
+
+  <!-- 底部导航 -->
+  <div class="bottom-nav">
+    <a href="meal.html">上页</a>
+    <a href="index.html">主页</a>
+  </div>
+
+  <!-- 最终解释权声明 -->
+  <div class="disclaimer">
+    ©最终解释权归Xu YiNuo所有
+  </div>
+</body>
+</html>

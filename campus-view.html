@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Campus View</title>
+  <style type="text/css">
+    /* 子页面背景：与主页面绿色单元格颜色一致 */
+    body {
+      background-color: rgba(76, 175, 80, 0.3);
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+      font-family: "微软雅黑", sans-serif;
+    }
+
+    /* 页面标题 */
+    .page-title {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .page-title p {
+      font-size: 16px;
+      color: #555;
+      margin: 5px 0 0;
+    }
+
+    /* 图片容器：自适应对称布局（四宫格） */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 30px;
+      width: 100%;
+      max-width: 1000px;
+      height: calc(100vh - 120px); /* 减去标题高度 */
+      margin: 0 auto;
+    }
+
+    /* 图片项：包含图片+悬停遮罩 */
+    .image-item {
+      width: 100%;
+      height: 100%;
+      position: relative; /* 用于定位遮罩 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden; /* 隐藏超出部分 */
+    }
+    .image-item img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover; /* 覆盖容器（保持比例） */
+      transition: transform 0.2s ease;
+    }
+.image-item img {
+  width: 100%;
+  aspect-ratio: 4/3; /* 宽高比固定为4:3，所有图片比例一致 */
+  object-fit: cover;
+  transition: transform 0.2s ease;
+}
+    /* 悬停遮罩：默认隐藏，悬停时显示 */
+    .image-mask {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 12px 0;
+      background-color: rgba(0, 0, 0, 0.7); /* 黑色透明背景 */
+      color: #fff; /* 白色文字 */
+      text-align: center;
+      font-size: 14px;
+      opacity: 0; /* 默认透明 */
+      transition: opacity 0.2s ease;
+    }
+
+    /* 悬停效果：图片放大+遮罩显示 */
+    .image-item:hover img {
+      transform: scale(1.08);
+    }
+    .image-item:hover .image-mask {
+      opacity: 1; /* 显示遮罩 */
+    }
+  </style>
+</head>
+<body>
+  <!-- 页面标题 -->
+  <div class="page-title">
+    <h1>Campus view</h1>
+  </div>
+
+  <div class="image-grid">
+    <!-- 图片1：华中科技大学校史馆 -->
+    <div class="image-item">
+      <a href="https://m.thepaper.cn/baijiahao_5101017" target="_blank">
+        <img src="Image/nandamen.png" alt="南大门">
+        <div class="image-mask">南大门</div>
+      </a>
+    </div>
+    <!-- 图片2 -->
+    <div class="image-item">
+      <a href="http://www.libaofengstudio.com/?post_type=products&page_id=25745" target="_blank">
+        <img src="Image/xiaoshiguan.png" alt="校史馆">
+        <div class="image-mask">校史馆</div>
+      </a>
+    </div>
+    <!-- 图片3 -->
+    <div class="image-item">
+      <a href="https://baike.baidu.com/item/%E9%86%89%E6%99%9A%E4%BA%AD/1527966" target="_blank">
+        <img src="Image/zuiwanting.png" alt="醉晚亭">
+        <div class="image-mask">醉晚亭</div>
+      </a>
+    </div>
+    <!-- 图片4 -->
+    <div class="image-item">
+      <a href="https://www.bilibili.com/video/BV1wt4y1m7rf/" target="_blank">
+        <img src="Image/yifulou.png" alt="逸夫楼">
+        <div class="image-mask">逸夫楼</div>
+      </a>
+    </div>
+  </div>
+<!-- 底部导航链接 -->
+<!-- 底部导航链接 -->
+<div style="text-align: center; margin-top: 20px; padding: 10px 0;">
+  <a href="index.html" style="color: orange; text-decoration: none; margin: 0 20px; font-size: 18px;">返回主页</a>
+  <a href="off-campus-view.html" style="color: orange; text-decoration: none; margin: 0 20px; font-size: 18px;">下页</a>
+</div>
+<!-- 最终解释权声明 -->
+<div style="text-align: center; margin-top: 15px; color: #000; font-size: 14px;">
+  ©最终解释权归Xu Yinuo所有
+</div>
+</body>
+</html>

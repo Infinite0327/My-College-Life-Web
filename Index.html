@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>My College Life</title>
+<style type="text/css">
+/* 修改区域1：合并.bg_container样式，确保整体居中 */
+.bg_container {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex; /* 合并原两个.bg_container的样式 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    padding: 20px;
+    box-sizing: border-box;
+	overflow: hidden;
+    /* 新增：将背景图设为容器背景，而非img标签 */
+    background: url("Image/yunduo.jpg") repeat-y center top; /* repeat-y：垂直平铺 */
+    background-size: cover; /* 保持背景图比例 */
+    animation: moveBgUp 20s linear infinite; 
+	
+}
+@keyframes moveBgUp {
+  0% {
+    background-position: center top; /* 初始位置：顶部 */
+  }
+  100% {
+    background-position: center bottom; /* 结束位置：底部 */
+  }
+}
+
+/* 修改区域2：调整table宽度为自适应，避免撑开布局 */
+.bg_container table {
+  width: auto; /* 原80%改为auto，跟随方块宽度 */
+  border-collapse: separate; /* 原collapse改为separate，配合间隔 */
+  margin: 0 auto;
+  border-spacing: 15px; /* 新增：方块之间的间隔 */
+}
+/* 修改区域3：调整方块宽高、内边距，适配内容 */
+.bg_container td {
+  width: 100px; /* 原70px改为100px，比图里大一点 */
+  height: 100px; /* 原70px改为100px */
+  padding: 8px; /* 原15px改为8px，减少内边距 */
+  text-align: center; /* 文字居中 */
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* 平滑过渡 */
+  transform-origin: center; /* 以中心放大 */
+  display: flex; /* 让单元格内内容垂直居中 */
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 4px; /* 新增：轻微圆角更美观 */
+}
+.bg_container td:hover {
+  transform: scale(1.08); /* 放大比例（1.08=放大8%） */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* 可选：加一点阴影 */
+}
+	
+.cell-green { background-color: #4CAF50; }
+.cell-blue { background-color: #2196F3; }
+.cell-purple { background-color: #9C27B0; }
+.cell-brown { background-color: #795548; }
+
+/* 修改区域4：调整文字大小，避免溢出 */
+.bg_container a {
+  color: #fff; /* 文字改为白色，与深色背景对比清晰 */
+  text-decoration: none; /* 无下划线 */
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 12px; /* 原18px改为12px，适配方块 */
+  line-height: 1.2; /* 新增：调整行高，避免文字重叠 */
+}
+.disclaimer {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #000; /* 黑色文字 */
+  font-size: 14px;
+  font-weight: 500;
+}
+</style>
+</head>
+
+<body>
+<div class="bg_container">
+	<table>
+      <tr>
+        <td class="cell-green">
+			<a href="campus-view.html">
+				<p>Campus View</p>
+        		<p>🪶🔱🐈</p>
+			</a>
+		</td>
+        <td class="cell-blue">
+			<a href="off-campus-view.html">
+				<p>Off-Campus</p> <!-- 修改：精简文字，避免溢出 -->
+        		<p>🌳🌟🪂</p>
+			</a>
+		</td>
+        <td class="cell-purple">
+			<a href="meal.html">
+				<p>Meal</p>
+        		<p>🌮🍣🍕</p>
+			</a>
+		</td>
+        <td class="cell-brown">
+			<a href="others.html">
+				<p>Others</p>
+        		<p>🥳🤸‍🏖️</p>
+			</a>
+		</td>
+      </tr>
+    </table>
+<div class="disclaimer">©最终解释权归Xu YiNuo所有</div>
+</div>
+
+</body>
+</html>

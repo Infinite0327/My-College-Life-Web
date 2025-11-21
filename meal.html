@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Daily eating</title>
+  <style type="text/css">
+    /* 子页面背景：与主页面紫色单元格颜色一致 */
+    body {
+      background-color: rgba(156, 39, 176, 0.3);
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+      font-family: "微软雅黑", sans-serif;
+    }
+
+    /* 图片+文字容器：2行4列布局 */
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 每行4张图 */
+      gap: 25px; /* 图片/卡片之间的间隔 */
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto; /* 容器居中 */
+    }
+
+    /* 单个食物卡片：包含图片+文字 */
+    .food-card {
+      background-color: #fff; /* 卡片背景白色 */
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* 图片：大小一致 */
+    .food-card img {
+      width: 100%;
+      aspect-ratio: 4/3; /* 固定宽高比，确保所有图片大小一致 */
+      object-fit: cover; /* 保持比例，不拉伸 */
+      border-radius: 4px;
+    }
+
+    /* 食物名称：紫色（与背景色一致） */
+    .food-title {
+      color: rgba(156, 39, 176, 1); /* 纯紫色 */
+      font-size: 18px;
+      margin: 10px 0 5px;
+      text-align: center;
+    }
+
+    /* 表情/标识行 */
+    .food-emoji {
+      text-align: center;
+      font-size: 16px;
+      margin: 0 0 8px;
+    }
+
+    /* 介绍文字 */
+    .food-desc {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    /* 底部导航链接 */
+    .bottom-nav {
+      text-align: center;
+      margin-top: 30px;
+      padding: 10px 0;
+    }
+    .bottom-nav a {
+      color: orange;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+    }
+
+    /* 最终解释权声明 */
+    .disclaimer {
+      text-align: center;
+      margin-top: 15px;
+      color: #000;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="food-grid">
+    <!-- 食物1：桂花酒酿 -->
+    <div class="food-card">
+      <img src="Image/paofu.png" alt="泡芙">
+      <div class="food-title">泡芙</div>
+      <div class="food-emoji">(*´∀`*)</div>
+      <div class="food-desc">位于hust西校区喻园教育超市下的面包店，好吃！。</div>
+    </div>
+
+    <!-- 食物2：柳州螺蛳粉 -->
+    <div class="food-card">
+      <img src="Image/pizza.jpg" alt="披萨">
+      <div class="food-title">披萨</div>
+      <div class="food-emoji">(^∀^)</div>
+      <div class="food-desc">位于华科校内西区达美乐，周二周三有优惠。</div>
+    </div>
+
+    <!-- 食物3：蟹肉煲 -->
+    <div class="food-card">
+      <img src="Image/shousi.png" alt="寿司">
+      <div class="food-title">寿司</div>
+      <div class="food-emoji">(*^▽^*)</div>
+      <div class="food-desc">香港路新开的一家日料店，居然还有毛肚寿司~</div>
+    </div>
+
+    <!-- 食物4：XX美食 -->
+    <div class="food-card">
+      <img src="Image/wutongyu.jpg" alt="烧鸭套餐">
+      <div class="food-title">烧鸭套餐</div>
+      <div class="food-emoji">(◍•ᴗ•◍)♡</div>
+      <div class="food-desc">位于梧桐语问学中心的教师餐厅，味道不错，价格小贵</div>
+    </div>
+
+    <!-- 食物5：XX美食 -->
+    <div class="food-card">
+      <img src="Image/xihuayuan.png" alt="泰式酸辣年糕">
+      <div class="food-title">泰式酸辣年糕</div>
+      <div class="food-emoji">(๑•̀ㅂ•́)و✧</div>
+      <div class="food-desc">位于西华园，非常好吃！但价格也有点小贵</div>
+    </div>
+
+    <!-- 食物6：XX美食 -->
+    <div class="food-card">
+      <img src="Image/xueyi.png" alt="学一美食">
+      <div class="food-title">学一美食</div>
+      <div class="food-emoji">ε٩(๑- ₃ -)۶з</div>
+      <div class="food-desc">学一食堂的，物美价廉</div>
+    </div>
+
+    <!-- 食物7：XX美食 -->
+    <div class="food-card">
+      <img src="Image/huomenmeishikaorou.png" alt="烤肉">
+      <div class="food-title">火门美式烤肉</div>
+      <div class="food-emoji">(≧∇≦)ﾉ</div>
+      <div class="food-desc">位于中南影城，挺好吃的！</div>
+    </div>
+
+    <!-- 食物8：XX美食 -->
+    <div class="food-card">
+      <img src="Image/lamb.png" alt="羊腿">
+      <div class="food-title">蓝莓羊腿</div>
+      <div class="food-emoji">ヽ(✿ﾟ▽ﾟ)ノ</div>
+      <div class="food-desc">也是西华园的，味道还行，肉质一般，量还比较多</div>
+    </div>
+  </div>
+
+  <!-- 底部导航 -->
+  <div class="bottom-nav">
+    <a href="off-campus-view.html">上页</a>
+    <a href="index.html">主页</a>
+    <a href="others.html">下页</a>
+  </div>
+
+  <!-- 最终解释权声明 -->
+  <div class="disclaimer">
+    ©最终解释权归Xu YiNuo所有
+  </div>
+</body>
+</html>

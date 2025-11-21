@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Off-Campus View</title>
+  <style type="text/css">
+    /* 子页面背景：与主页面蓝色单元格颜色一致 */
+    body {
+      background-color: rgba(33, 150, 243, 0.3);
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+      font-family: "微软雅黑", sans-serif;
+    }
+
+    /* 图片容器：居中自适应（四宫格） */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 30px;
+      width: 100%;
+      max-width: 1000px;
+      height: calc(100vh - 140px); /* 预留底部链接和声明空间 */
+      margin: 0 auto;
+    }
+
+    /* 图片项：相对定位，用于遮罩 */
+    .image-item {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* 图片：宽高一致、保持比例 */
+    .image-item img {
+      width: 100%;
+      aspect-ratio: 4/3; /* 固定宽高比，确保四张图大小一致 */
+      object-fit: cover;  /* 不拉伸，必要时裁剪 */
+      transition: transform 0.2s ease;
+    }
+
+    /* 悬停放大 */
+    .image-item:hover img {
+      transform: scale(1.08);
+    }
+
+    /* 悬停时底部文字遮罩（黑色透明背景 + 白色文字） */
+    .image-mask {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 12px 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      text-align: center;
+      font-size: 14px;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .image-item:hover .image-mask {
+      opacity: 1;
+    }
+
+    /* 底部导航链接容器 */
+    .bottom-nav {
+      text-align: center;
+      margin-top: 20px;
+      padding: 10px 0;
+    }
+    .bottom-nav a {
+      color: orange;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px; /* 字号已调大 */
+    }
+
+    /* 最终解释权声明 */
+    .disclaimer {
+      text-align: center;
+      margin-top: 15px;
+      color: #000; /* 黑色 */
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="image-grid">
+    <!-- 图片1 -->
+    <div class="image-item">
+        <img src="Image/HelloKitty.png" alt="HelloKitty">
+        <div class="image-mask">HelloKitty</div>
+    </div>
+    <!-- 图片2 -->
+    <div class="image-item">
+        <img src="Image/fengye.png" alt="枫叶">
+        <div class="image-mask">枫叶</div>
+    </div>
+    <!-- 图片3 -->
+    <div class="image-item">
+        <img src="Image/xiaomaomi.png" alt="(*ΦωΦ*)">
+        <div class="image-mask">(*ΦωΦ*)</div>
+    </div>
+    <!-- 图片4 -->
+    <div class="image-item">
+        <img src="Image/wanxia.jpg" alt="晚霞">
+        <div class="image-mask">晚霞</div>
+    </div>
+  </div>
+
+  <!-- 底部导航：上页 / 主页 / 下页 -->
+  <div class="bottom-nav">
+    <a href="campus-view.html">上页</a>
+    <a href="index.html">主页</a>
+    <a href="meal.html">下页</a>
+  </div>
+
+  <!-- 最终解释权声明 -->
+  <div class="disclaimer">
+    ©最终解释权归Xu Yinuo所有
+  </div>
+</body>
+</html>
